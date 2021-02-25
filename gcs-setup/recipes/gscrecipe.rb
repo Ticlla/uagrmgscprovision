@@ -7,3 +7,15 @@
 package 'java' do
 	action :install
 end
+
+package 'scala' do
+	action :install
+end
+
+package 'sbt' do
+	action :install
+end
+
+package 'docker' do
+	action :install
+end
