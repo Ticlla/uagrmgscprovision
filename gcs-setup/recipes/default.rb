@@ -22,6 +22,9 @@ package 'nano' do
         action :install
 end
 
+package 'which' do
+        action :install
+end
 
 
 
