@@ -22,7 +22,7 @@ execute 'sbt-download' do
 end
 
 execute 'sbt-install' do
-    command 'sudo dnf install sbt'
+    command 'sudo dnf install -y sbt'
 end
 
 package 'docker' do
