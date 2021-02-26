@@ -17,6 +17,22 @@ execute 'compile with sbt' do
 	command 'sudo sbt rpm:packageBin'
 end
 
+execute 'move rpm installer' do
+	command "find gcs-app/ -name '*.noarch.rpm*' -exec mv -t . {} +"
+end
+
 execute 'install gcs app' do
-	command 'sudo rpm -i /home/vagrant/projecto-gcs/gcc-app/target/rpm/RPMS/noarch/gcs-app-2.8.x-1.noarch.rpm'
+	command 'sudo rpm -i gcs-app-2.8.x-1.noarch.rpm'
+end
+
+execute 'change app owner' do
+	command 'sudo chown -R gcs-app /usr/share/gcs-app/'
+end
+
+execute 'change group' do
+	command 'sudo chgrp -R gcs-app /usr/share/gcs-app/'
+end
+
+execute 'restart app' do 
+	command 'sudo systemctl restart gcs-app'
 end
