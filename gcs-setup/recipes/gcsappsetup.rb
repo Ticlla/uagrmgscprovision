@@ -29,6 +29,10 @@ execute 'change group' do
 	command 'sudo chgrp -R gcs-app /usr/share/gcs-app/'
 end
 
-execute 'restart app' do 
+execute 'restart gcs-app' do 
 	command 'sudo systemctl restart gcs-app'
+end
+
+execute 'restart nginx' do 
+	command 'sudo systemctl restart nginx'
 end
