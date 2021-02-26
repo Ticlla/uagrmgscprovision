@@ -1,6 +1,7 @@
 $script = <<-'SCRIPT'
 curl https://packages.chef.io/files/stable/chef-workstation/21.1.247/el/7/chef-workstation-21.1.247-1.el7.x86_64.rpm --output chef-workstation-21.1.247-1.el7.x86_64.rpm 
 rpm -ivh chef-workstation-21.1.247-1.el7.x86_64.rpm
+sudo dnf install -y git
 SCRIPT
 
 Vagrant.configure("2") do |config|
