@@ -14,15 +14,15 @@ execute 'moving to project' do
 end
 
 execute 'compile with sbt' do
-	command 'sudo sbt rpm:packageBin'
+	command 'sudo sbt rpm:packageBin -Dsbt.rootdir=true'
 end
 
 execute 'move rpm installer' do
-	command "find gcs-app/ -name '*.noarch.rpm*' -exec mv -t . {} +"
+	command "sudo find /home/vagrant/projecto-gcs/gcs-app/ -name '*.noarch.rpm*' -exec mv -t /home/vagrant/ {} +"
 end
 
 execute 'install gcs app' do
-	command 'sudo rpm -i gcs-app-2.8.x-1.noarch.rpm'
+	command 'sudo rpm -i /home/vagrant/gcs-app-2.8.x-1.noarch.rpm'
 end
 
 execute 'change app owner' do
