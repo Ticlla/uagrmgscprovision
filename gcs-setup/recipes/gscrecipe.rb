@@ -4,8 +4,8 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-package 'java' do
-	action :install
+execute 'install java' do
+	command 'sudo dnf install -y java-1.8.0-openjdk-devel'
 end
 
 package 'scala' do
