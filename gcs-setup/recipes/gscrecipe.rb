@@ -26,7 +26,7 @@ execute 'sbt-install' do
 end
 
 execute 'rpm-buld-install' do
-    command 'sudo dnf install - y rpm-build'
+    command 'sudo dnf install -y rpm-build'
 end
 
 package 'docker' do
