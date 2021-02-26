@@ -9,12 +9,8 @@ execute 'cloning repositor' do
 	command 'git clone https://github.com/mundacho/proyecto-gcs.git /home/vagrant/projecto-gcs'
 end
 
-execute 'moving to project' do
-	command 'cd /home/vagrant/projecto-gcs'
-end
-
-execute 'compile with sbt' do
-	command 'sudo sbt rpm:packageBin -Dsbt.rootdir=true'
+execute 'moving to project and packaging the  app' do
+	command 'cd /home/vagrant/projecto-gcs ; sbt rpm:packageBin'
 end
 
 execute 'move rpm installer' do
