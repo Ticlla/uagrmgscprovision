@@ -11,23 +11,22 @@ execute 'create-db-defaul-initdb' do
 end
 
 execute 'start-postgres' do
-        command 'sudo systemctl start postgresql'
+        command 'sudo systemctl restart postgresql.service'
 end
 
-execute 'enable-postgresql' do
-	command 'sudo systemctl enable postgresql'
-end
+#execute 'enable-postgresql' do
+#        command 'sudo systemctl enable postgresql'
+#end
 
+execute 'all_permisos' do
+        command 'sudo chmod 777 /home/vagrant/'
+end
 execute 'delete_user' do
-	command ' sudo -u postgres dropuser gcs'
-	action :nothing
+        command 'sudo -u postgres dropuser gcs || sudo -u postgres createuser --interactive -e gcs -s'
 end
 
-execute 'add_user' do
-	command 'sudo -u postgres createuser --interactive -e gcs -s'
-	action :nothing
-end
+#execute 'move_pg_hba' do
+#        command 'sudo cp cookbooks/posgresql-setup/recipes/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf'
+#end
 
-execute 'move_pg_hba' do
-	command 'sudo cp cookbooks/posgresql-setup/recipes/pg_hba.conf /var/lib/pgsql/data/pg_hba.conf'
-end
+
