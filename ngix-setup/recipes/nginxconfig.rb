@@ -6,34 +6,15 @@
 #
 #
 
-
-# copy nginx_conf to /etc/nginx/nginx.config
-#
-template '/etc/nginx/nginx.conf' do
-	source 'ngix.config.erb'
-	cookbook 'ngix-setup'
-	action :create
-end
-
-#
-#
-# sudo setsebool -P httpd_can_network_connect on
 execute 'allow connection to host' do
         command 'sudo setsebool -P httpd_can_network_connect on'
 end
 
+template '/etc/nginx/nginx.conf' do
+	source 'nginx.conf.erb'
+	action :create
+end
 
-
-# systemctl restart nginx
-#
 execute 'restart nginx' do
 	command 'sudo systemctl restart nginx'
 end
-
-#
-#
-#
-#
-
-
-
