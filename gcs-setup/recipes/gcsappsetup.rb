@@ -14,7 +14,7 @@ execute 'moving to project and packaging the  app' do
 end
 
 execute 'move rpm installer' do
-	command "sudo find /home/vagrant/projecto-gcs/gcs-app/ -name '*.noarch.rpm*' -exec mv -t /home/vagrant/ {} +"
+	command "sudo find /home/vagrant/proyecto-gcs/gcs-app/ -name '*.noarch.rpm*' -exec mv -t /home/vagrant/ {} +"
 end
 
 execute 'install gcs app' do
