@@ -6,11 +6,11 @@
 #
 #
 execute 'cloning repositor' do
-	command 'git clone https://github.com/mundacho/proyecto-gcs.git /home/vagrant/projecto-gcs'
+	command 'git clone https://github.com/Ticlla/proyecto-gcs.git /home/vagrant/proyecto-gcs'
 end
 
 execute 'moving to project and packaging the  app' do
-	command 'cd /home/vagrant/projecto-gcs ; sbt rpm:packageBin'
+	command 'cd /home/vagrant/proyecto-gcs ; sudo sbt rpm:packageBin'
 end
 
 execute 'move rpm installer' do
