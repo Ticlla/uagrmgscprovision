@@ -14,6 +14,17 @@ execute 'Installing posgrsql server' do
 end
 
 
+template '/var/lib/pgsql/data/pg_hba.conf' do
+	source 'pg_hba.conf.erb'
+	action :create
+end
+
+template 'postgresql.conf' do
+	source 'postgresql.conf.erb'
+	action :create
+end
+
+
 execute 'set up initdb' do
     command 'sudo postgresql-setup --initdb'
 end
