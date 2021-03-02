@@ -4,7 +4,9 @@ rpm -ivh chef-workstation-21.1.247-1.el7.x86_64.rpm
 sudo dnf install -y git
 git clone https://github.com/Ticlla/uagrmgscprovision.git cookbooks
 cd /home/vagrant/cookbooks
-sudo chef-client -z -r "recipe[gcs-setup],recipe[gcs-setup::gscrecipe],recipe[ngix-setup::nginxsetup],recipe[gcs-setup::gcsappsetup],recipe[ngix-setup::nginxconfig]"
+sudo chef-client -z -r "recipe[gcs-setup],recipe[gcs-setup::gscrecipe],recipe[ngix-setup::nginxsetup],recipe[gcs-setup::gcsappsetup],recipe[ngix-setup::nginxconfig]" -y
+git config --global user.name "Alcides Ticlla"
+git config --global user.email alcides.ticlla@gmail.com
 SCRIPT
 
 flag = true
