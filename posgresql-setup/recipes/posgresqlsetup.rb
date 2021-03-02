@@ -15,7 +15,7 @@ end
 
 
 execute 'set up initdb' do
-    command 'ssudo postgresql-setup --initdb'
+    command 'sudo postgresql-setup --initdb'
 end
 
 
