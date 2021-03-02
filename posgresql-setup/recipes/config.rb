@@ -3,7 +3,7 @@ template '/var/lib/pgsql/data/pg_hba.conf' do
 	action :create
 end
 
-template 'postgresql.conf' do
+template '/var/lib/pgsql/data/postgresql.conf' do
 	source 'postgresql.conf.erb'
 	action :create
 end
