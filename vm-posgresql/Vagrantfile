@@ -8,7 +8,7 @@ cd /home/vagrant/cookbooks
 git config --global user.name "Alcides Ticlla"
 git config --global user.email "alcides.ticlla@gmail.com"
 
-sudo chef-client -z -r "recipe[posgresql-setup::posgresqlsetup]" -yes
+#sudo chef-client -z -r "recipe[posgresql-setup::posgresqlsetup]" -yes
 SCRIPT
 
 flag = true
